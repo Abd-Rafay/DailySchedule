@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff77ff, #6a5acd); /* Soft pink and purple gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 600px;
+    min-height: 50vh;
+    border-radius: 15px;
+    background-color: #ffffff;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.input-box #task {
+    padding-left: 24px;
+}
+
+.input-box {
+    border-radius: 14px;
+    background-color: #f7f7f7;
+    margin-bottom: 10px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 12px;
+    border: none;
+    background-color: #f7f7f7;
+    color: #555;
+    transition: all 0.3s ease;
+}
+
+.input-box input::placeholder {
+    color: #bbb;
+}
+
+.input-box input:focus {
+    border: none;
+    outline: none;
+    background-color: #e0e0e0;
+}
+
+.input-box .time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f7f7f7;
+    padding: 10px 14px;
+    border-radius: 12px;
+    gap: 10px; /* Add space between inputs */
+}
+
+.input-box .time input {
+    flex: 1; /* Make the inputs take up equal space */
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 12px;
+    border: none;
+    background-color: #f7f7f7;
+    color: #555;
+    transition: all 0.3s ease;
+}
+
+.input-box .time span {
+    font-size: 16px;
+    color: #555;
+    padding: 0 5px;
+    white-space: nowrap;
+}
+
+.input-box .time select {
+    width: 70px; /* Adjust width of dropdown */
+    background-color: #f7f7f7;
+    border-radius: 12px;
+    border: none;
+    color: #555;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.input-box .time input:focus,
+.input-box .time select:focus {
+    border: none;
+    outline: none;
+    background-color: #e0e0e0;
+}
+
+.input-box .time:focus-within {
+    background-color: #e0e0e0;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-box button {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    background-color: #ff6f61; /* Soft coral color */
+    color: white;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.input-box button:hover {
+    background-color: #ff5c47; /* Slightly darker coral on hover */
+}
+
+.schedule {
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 18px;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #444;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+}
+
+ul li:hover {
+    color: #ff6f61; /* Coral color when hovering over task */
+    transform: translateX(5px); /* Subtle movement to the right on hover */
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background-color: #ff6f61; /* Coral bullet color */
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+ul li span {
+    position: absolute;
+    right: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #ff4747;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+ul li:hover span {
+    opacity: 1; /* Show delete icon when hovering */
+}
+
+ul li.checked {
+    text-decoration: line-through;
+    color: #bbb;
+}
+
+ul li.checked::before {
+    background-color: #28a745; /* Green for completed tasks */
+}
+
+ul li span:hover {
+    color: #ff4747; /* Red for delete icon */
+}
